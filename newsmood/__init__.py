@@ -108,6 +108,21 @@ from newsmood.per_ticker_eval import (
     per_ticker_evaluate,
     per_ticker_panel,
 )
+from newsmood.data import (
+    DEFAULT_HF_REPO_ID,
+    DEFAULT_STAGING_DIR,
+    CachedEmbeddingStore,
+    EmbeddingsParquetView,
+    cached_embedding_store,
+    download_artifact,
+    hf_embedding_cache,
+    hf_news_dataframe,
+    pack_all_to_staging,
+    pack_embeddings_to_parquet,
+    pack_news_to_parquet,
+    pack_ohlcv_to_dir,
+    pack_raw_searches_to_tarball,
+)
 
 __all__ = [
     # ingest
@@ -193,4 +208,18 @@ __all__ = [
     "attach_targets_per_ticker",
     "per_ticker_evaluate",
     "per_ticker_panel",
+    # data publishing/consumption
+    "DEFAULT_HF_REPO_ID",
+    "DEFAULT_STAGING_DIR",
+    "CachedEmbeddingStore",
+    "EmbeddingsParquetView",
+    "cached_embedding_store",
+    "download_artifact",
+    "hf_embedding_cache",
+    "hf_news_dataframe",
+    "pack_all_to_staging",
+    "pack_embeddings_to_parquet",
+    "pack_news_to_parquet",
+    "pack_ohlcv_to_dir",
+    "pack_raw_searches_to_tarball",
 ]
