@@ -122,6 +122,7 @@ from newsmood.data import (
     pack_news_to_parquet,
     pack_ohlcv_to_dir,
     pack_raw_searches_to_tarball,
+    upload_staging_to_hf,
 )
 
 __all__ = [
@@ -222,4 +223,5 @@ __all__ = [
     "pack_news_to_parquet",
     "pack_ohlcv_to_dir",
     "pack_raw_searches_to_tarball",
+    "upload_staging_to_hf",
 ]
