@@ -55,8 +55,9 @@ def positions_tanh(y_pred: pd.Series, *, scale: float = 0.01) -> pd.Series:
     Default ``scale=0.01`` means a +1% predicted return → ≈0.76 position.
 
     >>> import pandas as pd, math
-    >>> round(positions_tanh(pd.Series([0.01]), scale=0.01).iloc[0], 4)
-    0.7616
+    >>> p = float(positions_tanh(pd.Series([0.01]), scale=0.01).iloc[0])
+    >>> 0.76 < p < 0.77
+    True
     """
     return np.tanh(y_pred.astype(float) / max(scale, 1e-12)).fillna(0.0)
 

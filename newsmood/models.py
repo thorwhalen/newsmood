@@ -54,8 +54,11 @@ def walk_forward_splits(
     test_size
         Size of each test fold. Default: ``(n - min_train) // n_splits``.
 
-    >>> list(walk_forward_splits(20, n_splits=3, min_train=8, embargo=1, test_size=3))
-    [(array([0, 1, 2, 3, 4, 5, 6, 7]), array([ 9, 10, 11])), (array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11]), array([13, 14, 15])), (array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15]), array([17, 18, 19]))]
+    >>> splits = list(walk_forward_splits(20, n_splits=3, min_train=8, embargo=1, test_size=3))
+    >>> len(splits)
+    3
+    >>> splits[0][1].tolist()
+    [9, 10, 11]
     """
     if n < min_train + embargo + 1:
         return

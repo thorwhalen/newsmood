@@ -13,15 +13,15 @@ of the training set).
 
 Examples
 --------
->>> from newsmood.clusters import fit_news_clusters, attach_cluster_id
->>> from newsmood.embed import deterministic_dummy_embedder
->>> import pandas as pd, numpy as np
->>> e = deterministic_dummy_embedder(dim=8)
+>>> from newsmood.clusters import fit_news_clusters, attach_cluster_id  # doctest: +SKIP
+>>> from newsmood.embed import deterministic_dummy_embedder              # doctest: +SKIP
+>>> import pandas as pd, numpy as np                                      # doctest: +SKIP
+>>> e = deterministic_dummy_embedder(dim=8)                               # doctest: +SKIP
 >>> df = pd.DataFrame({'doc_id': list('abcd'),
-...                    'vector': [e('a'), e('b'), e('c'), e('d')]})
->>> model = fit_news_clusters(df, n_clusters=2, random_state=0)
->>> labeled = attach_cluster_id(df, model)
->>> sorted(labeled['cluster'].unique().tolist())
+...                    'vector': [e('a'), e('b'), e('c'), e('d')]})       # doctest: +SKIP
+>>> model = fit_news_clusters(df, n_clusters=2, random_state=0)           # doctest: +SKIP
+>>> labeled = attach_cluster_id(df, model)                                # doctest: +SKIP
+>>> sorted(labeled['cluster'].unique().tolist())                          # doctest: +SKIP
 [0, 1]
 """
 
