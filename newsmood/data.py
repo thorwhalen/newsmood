@@ -48,6 +48,17 @@ DEFAULT_STAGING_DIR = os.environ.get(
 )
 
 
+def _hf_write_token() -> Optional[str]:
+    """Return the token to use for HF *write* operations.
+
+    Convention: ``HF_TOKEN`` is read-only (least-privilege default that
+    ``huggingface_hub`` will pick up automatically); ``HF_WRITE_TOKEN`` is
+    the elevated token used for ``create_repo`` / ``upload_*``. Falls back
+    to ``HF_TOKEN`` if ``HF_WRITE_TOKEN`` isn't set.
+    """
+    return os.environ.get("HF_WRITE_TOKEN") or os.environ.get("HF_TOKEN")
+
+
 # ---------------------------------------------------------------------------
 # Export side
 # ---------------------------------------------------------------------------
@@ -434,7 +445,8 @@ def pack_all_to_staging(
 ) -> dict[str, str]:
     """Build every artifact under one staging directory and return paths.
 
-    Caller then uploads ``staging_dir`` to the HF Hub.
+    Caller then uploads ``staging_dir`` to the HF Hub via
+    :func:`upload_staging_to_hf`.
     """
     staging = pathlib.Path(staging_dir).expanduser()
     staging.mkdir(parents=True, exist_ok=True)
@@ -457,6 +469,51 @@ def pack_all_to_staging(
     return out
 
 
+def upload_staging_to_hf(
+    *,
+    staging_dir: str = DEFAULT_STAGING_DIR,
+    repo_id: str = DEFAULT_HF_REPO_ID,
+    commit_message: str = "Update artifacts",
+    private: bool = False,
+    token: Optional[str] = None,
+    verbose: bool = True,
+) -> str:
+    """Push a staging directory to an HF Dataset.
+
+    Requires a write-scoped HF token. Resolution order:
+    1. Explicit ``token=`` arg.
+    2. ``HF_WRITE_TOKEN`` env var.
+    3. ``HF_TOKEN`` env var (only works if it happens to have write scope).
+
+    Returns the dataset URL.
+    """
+    from huggingface_hub import HfApi, create_repo
+
+    tok = token or _hf_write_token()
+    if tok is None:
+        raise RuntimeError(
+            "No HF token available. Set HF_WRITE_TOKEN (preferred) or HF_TOKEN."
+        )
+    api = HfApi(token=tok)
+    info = create_repo(
+        repo_id, repo_type="dataset", exist_ok=True, private=private, token=tok
+    )
+    if verbose:
+        print(f"Repo ready: {info.url}", flush=True)
+    staging = pathlib.Path(staging_dir).expanduser()
+    api.upload_folder(
+        folder_path=str(staging),
+        repo_id=repo_id,
+        repo_type="dataset",
+        commit_message=commit_message,
+        token=tok,
+    )
+    url = f"https://huggingface.co/datasets/{repo_id}"
+    if verbose:
+        print(f"Browse: {url}", flush=True)
+    return url
+
+
 __all__ = [
     "DEFAULT_HF_REPO_ID",
     "DEFAULT_STAGING_DIR",
@@ -471,4 +528,5 @@ __all__ = [
     "pack_news_to_parquet",
     "pack_ohlcv_to_dir",
     "pack_raw_searches_to_tarball",
+    "upload_staging_to_hf",
 ]
