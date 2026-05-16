@@ -318,6 +318,28 @@ In order of (estimated marginal value) / (estimated effort):
   `misc/evaluate_real_embeddings.py`.
 - Test suites pass on Python 3.12, with `pandas`, `numpy`, `scikit-learn`,
   `pyarrow`, `yfinance`, `litellm`, `dol`, `vd`, `imbed`, `aix`.
-- Data is being published as `thorwhalen/newsmood-data` on Hugging Face for
-  reproducibility; `newsmood.data` will read-through-cache from that
-  dataset on first use.
+
+### Published artifacts (Hugging Face Dataset)
+
+All four artifacts are mirrored at
+**[`thorwhalen/newsmood-data`](https://huggingface.co/datasets/thorwhalen/newsmood-data)**
+so any fresh checkout can hydrate without re-running ingest or paying for
+embeddings:
+
+| File | Size | URL |
+|---|---:|---|
+| `embeddings.parquet` | ~1.0 GB | https://huggingface.co/datasets/thorwhalen/newsmood-data/resolve/main/embeddings.parquet |
+| `news.parquet` | ~213 MB | https://huggingface.co/datasets/thorwhalen/newsmood-data/resolve/main/news.parquet |
+| `raw_searches.tar.gz` | ~329 MB | https://huggingface.co/datasets/thorwhalen/newsmood-data/resolve/main/raw_searches.tar.gz |
+| `ohlcv/*.parquet` | ~280 KB total | https://huggingface.co/datasets/thorwhalen/newsmood-data/tree/main/ohlcv |
+
+Programmatic access:
+
+```python
+from newsmood.data import cached_embedding_store, hf_news_dataframe
+store = cached_embedding_store()   # local first, HF on miss; promotes hits to local
+df = hf_news_dataframe()           # canonical news, one-shot cached download
+```
+
+Or directly via `huggingface_hub.hf_hub_download` — see
+[`newsmood/data.py`](../../newsmood/data.py) for the low-level helpers.
