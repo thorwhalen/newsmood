@@ -1,0 +1,15 @@
+newsmood.features
+=================
+
+.. automodule:: newsmood.features
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cosine_to_seeds
+      build_seed_embeddings
+      session_features
+      panel_with_targets
+   

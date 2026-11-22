@@ -1,0 +1,23 @@
+# newsmood
+
+> Tools to do semantic analysis on news
+
+
+## Pages in this subsection
+
+- [newsmood](newsmood.html.md): newsmood — news-embedding trading signals.
+- [newsmood.clusters](newsmood.clusters.html.md): Cluster-bucket features.
+- [newsmood.data](newsmood.data.html.md): Pack local artifacts for publishing and download-on-miss from HF.
+- [newsmood.embed](newsmood.embed.html.md): Embed canonical-DataFrame rows and load them into a vd collection.
+- [newsmood.features](newsmood.features.html.md): Per-session features for news-driven prediction.
+- [newsmood.infer](newsmood.infer.html.md): Train, persist, and apply a news-embedding signal model.
+- [newsmood.ingest](newsmood.ingest.html.md): Ingest news from the local searches store into a canonical DataFrame.
+- [newsmood.models](newsmood.models.html.md): Baseline walk-forward modeling on the news-feature panel.
+- [newsmood.per_ticker_eval](newsmood.per_ticker_eval.html.md): End-to-end per-ticker evaluation.
+- [newsmood.select](newsmood.select.html.md): Feature selection + regularization tuning for the news panel.
+- [newsmood.targets](newsmood.targets.html.md): Price targets for news-driven prediction.
+- [newsmood.tickers](newsmood.tickers.html.md): Per-ticker article matching: lightweight regex-based NER.
+
+## Optional
+
+- [Top-level llms.txt](../llms.txt): Complete documentation index.

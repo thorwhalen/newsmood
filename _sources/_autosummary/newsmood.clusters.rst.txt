@@ -1,0 +1,14 @@
+newsmood.clusters
+=================
+
+.. automodule:: newsmood.clusters
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      fit_news_clusters
+      attach_cluster_id
+      session_cluster_counts
+   

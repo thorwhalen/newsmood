@@ -1,0 +1,16 @@
+newsmood.targets
+================
+
+.. automodule:: newsmood.targets
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      align_news_to_session
+      align_news_series_to_sessions
+      get_ohlcv
+      forward_returns
+      attach_targets
+   

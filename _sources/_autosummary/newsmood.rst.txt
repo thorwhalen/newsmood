@@ -1,0 +1,106 @@
+﻿newsmood
+========
+
+.. automodule:: newsmood
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      ingest_searches
+      iter_canonical_rows
+      make_doc_id
+      make_text_to_embed
+      parse_key
+      default_embedding_cache
+      deterministic_dummy_embedder
+      embed_dataframe
+      embed_doc_ids
+      make_news_collection
+      news_pipeline
+      populate_collection
+      align_news_series_to_sessions
+      align_news_to_session
+      attach_targets
+      forward_returns
+      get_ohlcv
+      build_seed_embeddings
+      panel_with_targets
+      session_features
+      evaluate_walk_forward
+      fit_predict_ridge
+      information_coefficient
+      long_short_sharpe
+      rank_information_coefficient
+      sign_accuracy
+      walk_forward_splits
+      attach_tickers
+      explode_to_ticker_rows
+      match_tickers
+      per_ticker_session_features
+      attach_cluster_id
+      fit_news_clusters
+      session_cluster_counts
+      load_model
+      open_mall
+      predict_scores
+      run_inference
+      save_model
+      train_and_save
+      write_predictions_to_mall
+      annualized_sharpe
+      annualized_sortino
+      backtest
+      backtest_walk_forward
+      hit_rate_sign
+      max_drawdown
+      turnover
+      win_rate
+      drop_high_correlation
+      drop_low_variance
+      make_per_fold_mi_selector
+      sweep_alpha
+      top_k_by_mutual_information
+      attach_targets_per_ticker
+      per_ticker_evaluate
+      per_ticker_panel
+      cached_embedding_store
+      download_artifact
+      hf_embedding_cache
+      hf_news_dataframe
+      pack_all_to_staging
+      pack_embeddings_to_parquet
+      pack_news_to_parquet
+      pack_ohlcv_to_dir
+      pack_raw_searches_to_tarball
+      upload_staging_to_hf
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      WalkForwardResult
+      TickerMatcher
+      InferenceModel
+      BacktestResult
+      CachedEmbeddingStore
+      EmbeddingsParquetView
+   
+.. rubric:: Modules
+
+.. autosummary::
+   :toctree:
+   :recursive:
+
+   clusters
+   data
+   embed
+   features
+   infer
+   ingest
+   models
+   per_ticker_eval
+   select
+   targets
+   tickers

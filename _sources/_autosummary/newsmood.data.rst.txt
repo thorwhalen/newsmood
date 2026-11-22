@@ -1,0 +1,28 @@
+newsmood.data
+=============
+
+.. automodule:: newsmood.data
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      cached_embedding_store
+      download_artifact
+      hf_embedding_cache
+      hf_news_dataframe
+      pack_all_to_staging
+      pack_embeddings_to_parquet
+      pack_news_to_parquet
+      pack_ohlcv_to_dir
+      pack_raw_searches_to_tarball
+      upload_staging_to_hf
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      CachedEmbeddingStore
+      EmbeddingsParquetView
+   

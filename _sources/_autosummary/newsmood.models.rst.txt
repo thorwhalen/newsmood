@@ -1,0 +1,24 @@
+newsmood.models
+===============
+
+.. automodule:: newsmood.models
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      evaluate_walk_forward
+      fit_predict_ridge
+      information_coefficient
+      long_short_sharpe
+      rank_information_coefficient
+      sign_accuracy
+      walk_forward_splits
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      WalkForwardResult
+   

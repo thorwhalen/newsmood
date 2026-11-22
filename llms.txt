@@ -1,0 +1,30 @@
+# newsmood
+
+> Tools to do semantic analysis on news
+
+
+## Pages
+
+- [newsmood](index.html.md): News-embedding trading-signal research substrate. Ingests financial news,
+- [API reference](api.html.md): | &#96;newsmood&#96;   | newsmood — news-embedding trading signals.   |
+- [newsmood](_autosummary/newsmood.html.md): newsmood — news-embedding trading signals.
+- [newsmood.clusters](_autosummary/newsmood.clusters.html.md): Cluster-bucket features.
+- [newsmood.data](_autosummary/newsmood.data.html.md): Pack local artifacts for publishing and download-on-miss from HF.
+- [newsmood.embed](_autosummary/newsmood.embed.html.md): Embed canonical-DataFrame rows and load them into a vd collection.
+- [newsmood.features](_autosummary/newsmood.features.html.md): Per-session features for news-driven prediction.
+- [newsmood.infer](_autosummary/newsmood.infer.html.md): Train, persist, and apply a news-embedding signal model.
+- [newsmood.ingest](_autosummary/newsmood.ingest.html.md): Ingest news from the local searches store into a canonical DataFrame.
+- [newsmood.models](_autosummary/newsmood.models.html.md): Baseline walk-forward modeling on the news-feature panel.
+- [newsmood.per_ticker_eval](_autosummary/newsmood.per_ticker_eval.html.md): End-to-end per-ticker evaluation.
+- [newsmood.select](_autosummary/newsmood.select.html.md): Feature selection + regularization tuning for the news panel.
+- [newsmood.targets](_autosummary/newsmood.targets.html.md): Price targets for news-driven prediction.
+- [newsmood.tickers](_autosummary/newsmood.tickers.html.md): Per-ticker article matching: lightweight regex-based NER.
+- [About this build](about-this-build.html.md): This documentation was built on &#42;&#42;2026-11-22 18:50 UTC&#42;&#42; from commit &lt;a href="https://github.com/tho...
+
+## Optional
+
+- [newsmood.md](newsmood.md): Complete documentation in a single file.
+
+## Build
+
+- [build_info.json](build_info.json): build provenance (commit, version, tool versions, whether the docs match the package)

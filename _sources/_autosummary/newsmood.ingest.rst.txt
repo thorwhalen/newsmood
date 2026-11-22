@@ -1,0 +1,20 @@
+newsmood.ingest
+===============
+
+.. automodule:: newsmood.ingest
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      parse_key
+      parse_newsdata
+      parse_yahoo_finance
+      parse_yahoo_finance_headlines
+      register_parser
+      make_text_to_embed
+      make_doc_id
+      iter_canonical_rows
+      ingest_searches
+   

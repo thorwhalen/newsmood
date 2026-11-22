@@ -1,0 +1,14 @@
+newsmood.per\_ticker\_eval
+==========================
+
+.. automodule:: newsmood.per_ticker_eval
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      per_ticker_panel
+      attach_targets_per_ticker
+      per_ticker_evaluate
+   

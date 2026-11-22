@@ -1,0 +1,16 @@
+newsmood.select
+===============
+
+.. automodule:: newsmood.select
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      drop_low_variance
+      drop_high_correlation
+      make_per_fold_mi_selector
+      top_k_by_mutual_information
+      sweep_alpha
+   

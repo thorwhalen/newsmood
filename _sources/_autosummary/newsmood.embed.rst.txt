@@ -1,0 +1,18 @@
+newsmood.embed
+==============
+
+.. automodule:: newsmood.embed
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      default_embedding_cache
+      deterministic_dummy_embedder
+      embed_doc_ids
+      embed_dataframe
+      make_news_collection
+      populate_collection
+      news_pipeline
+   

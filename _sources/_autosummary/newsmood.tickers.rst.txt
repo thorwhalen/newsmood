@@ -1,0 +1,21 @@
+newsmood.tickers
+================
+
+.. automodule:: newsmood.tickers
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      match_tickers
+      attach_tickers
+      explode_to_ticker_rows
+      per_ticker_session_features
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      TickerMatcher
+   

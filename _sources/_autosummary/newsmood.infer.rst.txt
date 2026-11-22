@@ -1,0 +1,24 @@
+newsmood.infer
+==============
+
+.. automodule:: newsmood.infer
+
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      load_model
+      open_mall
+      predict_scores
+      run_inference
+      save_model
+      train_and_save
+      write_predictions_to_mall
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      InferenceModel
+   
